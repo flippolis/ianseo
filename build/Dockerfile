@@ -18,6 +18,7 @@ COPY ./apache/ianseo.conf /etc/apache2/conf.d
 RUN mkdir /var/www/localhost/htdocs/ianseo
 RUN /usr/bin/wget -P /tmp https://www.ianseo.net/Release/Ianseo_20241208.zip
 RUN /usr/bin/unzip -d /var/www/localhost/htdocs/ianseo /tmp/Ianseo_20241208.zip
+RUN /bin/rm /tmp/Ianseo_20241208.zip
 RUN chown -R apache:apache /var/www/localhost/htdocs/ianseo
 RUN chmod -R 777 /var/www/localhost/htdocs/ianseo
 
