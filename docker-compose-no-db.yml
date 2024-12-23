@@ -1,0 +1,13 @@
+services:
+
+  ianseo:
+    image: flippolis/ianseo:latest
+    container_name: ianseo
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ianseo_web:/var/www/localhost/htdocs/ianseo
+
+volumes:
+  ianseo_web:

@@ -1,0 +1,36 @@
+services:
+
+  ianseo:
+    image: flippolis/ianseo:latest
+    container_name: ianseo
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ianseo_web:/var/www/localhost/htdocs/ianseo
+    depends_on:
+      db:
+          condition: service_healthy
+
+  db:
+    image: mariadb:11.6
+    container_name: ianseo_db
+    restart: unless-stopped
+    volumes:
+      - ianseo_db:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: ROOT_PASSWORD
+      MARIADB_DATABASE: ianseo
+      MARIADB_USER: ianseo
+      MARIADB_PASSWORD: IANSEO_DB_PASSWORD
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
+
+volumes:
+  ianseo_web:
+  ianseo_db:
