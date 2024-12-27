@@ -1,6 +1,6 @@
 # i@nseo docker image
 
-## What is i@anseo?
+## What is i@nseo?
 
 [i@nseo](https://www.ianseo.net/) is a software for managing archery tournaments, sponsored by the Italian Archery Federation (FITARCO), distributed worldwide for free and translated in several languages. 
 
