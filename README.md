@@ -10,7 +10,7 @@
 
 ### Description
 
-Provides i@nseo version 2024-12-08 "Experience is the teacher of all things (Gaius Iulus Caesar)" rev 7 and is based on Alpine Linux 3.21, therefore it is very small on footprint.
+Provides i@nseo version 2024-12-08 "Experience is the teacher of all things (Gaius Iulus Caesar)" and is based on Alpine Linux 3.21, therefore it is very small on footprint.
 
 ### How to use it
 
